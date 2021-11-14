@@ -1,6 +1,6 @@
 #include "pzhelp"
 
-typedef int list[20];
+typedef int list[100];
 
 FUNC int minimum(list a) {
     int i;
@@ -11,9 +11,25 @@ FUNC int minimum(list a) {
     return min;
 }
 
+FUNC int maximum(list a) {
+    int i;
+    int max = a[0];
+    FOR(i, 1 TO sizeof(a)) {
+        if(a[i] < max) max = a[i];
+    }
+    return max;
+}
+
 PROGRAM {
-    int N, M;
+    int N, M, i, j;
     N = READ_INT();
     M = READ_INT();
-    
+    int arr[M][N];
+    FOR(i, 0 TO N-1) {
+        FOR(j, 0 TO M-1) {
+            arr[i][j] = READ_INT();
+        }
+    }
+
+
 }
