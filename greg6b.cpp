@@ -8,7 +8,7 @@ int main() {
     int count = 0;
     string word;
 
-    cin >> numberOfWords;
+   cin >> numberOfWords;
     cin.ignore();
     string result[numberOfWords];
 
