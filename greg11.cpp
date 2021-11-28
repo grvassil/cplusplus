@@ -14,6 +14,12 @@ int main() {
         }
     }
 
-
+    bool flag1 = false;
+    i = 0;
+    while (i < N*N && !flag1)
+    {
+        
+    }
+        
     
 }
