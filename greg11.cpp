@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int N, i, j;
+    int N, i, j, key;
 
     cin >> N;
     int a[N][N];
@@ -14,12 +14,30 @@ int main() {
         }
     }
 
-    bool flag1 = false;
-    i = 0;
-    while (i < N*N && !flag1)
-    {
-        
+    key = 0;
+    bool isMagic = false;
+    while(!isMagic && key < N*N) {
+
+        bool flag1 = false;
+        i = 0;
+        while (i < N && !flag1) {
+            j = 0;
+            while (j < N && !flag1) {
+                if (a[i][j] == key)
+                {
+                    flag1 = true;
+                }
+                else
+                {
+                    j++;
+                }
+                
+            }
+            
+        }
     }
+
+    key++;
         
     
 }
