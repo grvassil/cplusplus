@@ -15,17 +15,17 @@ int main() {
     }
 
     key = 0;
-    bool isMagic = false;
-    while(!isMagic && key < N*N) {
+    bool allNumbers = true;
+    while(allNumbers && key < N*N) {
 
-        bool flag1 = false;
+        bool found = false;
         i = 0;
-        while (i < N && !flag1) {
+        while (i < N && !found) {
             j = 0;
-            while (j < N && !flag1) {
+            while (j < N && !found) {
                 if (a[i][j] == key)
                 {
-                    flag1 = true;
+                    found = true;
                 }
                 else
                 {
@@ -33,11 +33,54 @@ int main() {
                 }
                 
             }
-            
+            i++;
+        }
+        if(found) {
+            key++;
+        } else {
+            allNumbers = false;
         }
     }
 
-    key++;
-        
+    if (!allNumbers)
+    {
+        cout << "no" << '\n';
+    }
+    else
+    {
+        int sum1 = 0;
+        int sum2 = 0;
+        for(i = 0; i < N; i++) {
+            sum1+=a[i][i];
+            sum2+=a[i][N-1-i];
+        }
+        if(sum1 != sum2) {
+            cout << "no"<< '\n';
+        } else {
+            bool flag = false;
+            for(i = 0; i < N; i++){
+                int sum = 0;
+                for(j = 0; j < N; j++) {
+                    sum+=a[i][j];
+                }
+                if(sum!=sum1) flag = true;
+            }
+            bool flag1 = false;
+            for(j = 0; j < N; j++){
+                int sum = 0;
+                for(i = 0; i < N; i++) {
+                    sum+=a[i][j];
+                }
+                if(sum!=sum1) flag1 = true;
+            }
+
+            if(!flag && !flag1) {
+                cout << "yes" << '\n';
+            } else {
+
+                cout << "no" << '\n';
+            }
+        }
+    }
     
 }
