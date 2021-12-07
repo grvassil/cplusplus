@@ -10,6 +10,6 @@ int main() {
         c = getchar();
     }
 
-    cout << n;
+    cout << c;
     
 }
