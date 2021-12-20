@@ -13,9 +13,15 @@ int main() {
     bool flag = false;
     i = 0;
     j = 0;
-    while (!flag && (a[i] >= 'a' && a[i] <= 'z') || (a[i] >='A' && a[i] <= 'Z'))
+    while (!flag)
     {
-        /* code */
+        if ((a[i] >= 'a' && a[i] <= 'z') || (a[i] >='A' && a[i] <= 'Z'))
+        {
+            
+        } else {
+            flag = true;
+        }
+        
     }
     
     
